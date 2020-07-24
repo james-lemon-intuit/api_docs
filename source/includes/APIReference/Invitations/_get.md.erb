@@ -1,0 +1,35 @@
+## GET Invitations
+
+<%= partial "includes/APIReference/Invitations/Examples/get.tmpl.erb" %>
+
+Finds the invitations for all of the users
+
+### HTTP Request
+
+<img src="images/get.png" alt="get"/><api>https://rest.tsheets.com/api/v1/invitations</api>
+
+### Properties
+_Pass the following paramaters to as the value to a 'data' property (see example)._
+
+|                |             |             |
+| -------------: | :---------: | ----------- |
+| **modified_since_method**<br/>optional | _String_ | IOS 8061 Timestamp.  Will find all invitations modified since the included time. |
+| **user_ids**<br/>optional | _String_ | Comma delimited list of user ids to inlcude. Will include all users by default |
+| **supplemental_data**<br/>optional | _Boolean_ | Should we include supplmental data?  Default is yes. |
+| **per_page**<br/>optional | _Int_ | How many results should we return per page?  Default is 50. |
+| **page**<br/>optional | _Int_ | Should we include supplmental data?  Defaults is yes. |
+
+
+### Status Codes
+
+Each invitation that is created will come back with a `_status_code` and `_status_message` that will indicate whether the invitation was created successfully.  If there was a problem creating an invitation, there may also be an additional field, `_status_extra`, which will contain more details about the failure.
+
+|         |          |
+| :-----: | :------- |
+| <code class="level200">201</code> | Ok. Request recieved and processed. |
+| <code class="level400">400</code> | Bad Request. |
+
+<aside class="notice">
+The maximum batch size is <i>50</i> invitations. If exceeded, a <code class="standout">413: Request entity too large</code> HTTP response will be returned.
+</aside>
+

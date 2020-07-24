@@ -71,6 +71,7 @@ includes:
   
   - APIReference/Invitations/invitations.md.erb
   - APIReference/Invitations/create.md.erb  
+  - APIReference/Invitations/get.md.erb  
 
   - APIReference/Jobcodes/jobcodes.md.erb
   - APIReference/Jobcodes/retrieve.md.erb
